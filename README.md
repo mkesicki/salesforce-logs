@@ -20,3 +20,12 @@ optional arguments:
   --date date    Optional date from which take logs. If not pass it is sat to
                  YESTERDAY
 ```
+
+
+## Required libraries
+
+- argparse
+- requests
+- pprint
+
+
