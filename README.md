@@ -17,7 +17,7 @@ positional arguments:
 
 optional arguments:
   -h, --help     show this help message and exit
-  --date date    Optional date from which take logs. If not pass it is sat to
+  --date date    Optional date from which take logs. If not pass it is set to
                  YESTERDAY
 ```
 

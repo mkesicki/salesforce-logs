@@ -81,7 +81,7 @@ if __name__ == '__main__':
     parser.add_argument('client_secret', metavar = 'client_secret', help = 'Salesforce application client_secret used to login')
     parser.add_argument('username', metavar = 'username', help = 'User name for login')
     parser.add_argument('password', metavar = 'password', help = 'User password for login')
-    parser.add_argument('--date', metavar = 'date', help = 'Optional date from which take logs. If not pass it is sat to YESTERDAY')
+    parser.add_argument('--date', metavar = 'date', help = 'Optional date from which take logs. If not pass it is set to YESTERDAY')
     args = parser.parse_args()
 
     login(args)
