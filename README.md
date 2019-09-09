@@ -1,5 +1,5 @@
 # Salesforce download logs
-##Usage
+## Usage
 
 ```
 $ python logs.py --help
