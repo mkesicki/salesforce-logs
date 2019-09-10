@@ -38,20 +38,14 @@ def download(instance, token, logDate):
     print("Download logs from: " + logDate )
 
     dir_path = os.getcwd()
-    logs_dir = os.path.join(dir_path, "logs")
+    logs_dir = os.path.join(*[dir_path,"logs",logDate])
     # results_dir = os.path.join(dir_path, "results")
 
-    current_dir = os.path.join(logs_dir, logDate)
-
     if os.path.exists(logs_dir) is False:
-        os.mkdir(logs_dir)
+        os.makedirs(logs_dir)
 
     # if os.path.exists(results_dir) is False:
     #     os.mkdir(results_dir)
-
-    if os.path.exists(current_dir) is False:
-        os.mkdir(current_dir)
-
 
     url = instance + "/services/data/v34.0/query?q=Select Id,EventType,LogDate From EventLogFile Where LogDate>=" + logDate + "T00:00:00Z"
 
@@ -67,7 +61,7 @@ def download(instance, token, logDate):
         print("Download log flie: " + url)
 
         logResponse = requests.get(url, headers=headers)
-        fileName = os.path.join(current_dir, logFile.get("Id") + "_" + logFile.get("EventType") + '.csv' )
+        fileName = os.path.join(logs_dir, logFile.get("Id") + "_" + logFile.get("EventType") + '.csv' )
         print("Save log file to: " + fileName)
 
         with open(fileName, 'w') as file:
