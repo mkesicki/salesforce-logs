@@ -1,3 +1,4 @@
 logs
 *.pyc
 workspace.code-workspace
+.vscode
